@@ -1,6 +1,6 @@
+import { env } from './env.js'
 export default async function setupSSE() {
-    //const evtSource = new EventSource('http://192.168.0.117:3030/sse');
-    const evtSource = new EventSource('http://localhost:3030/sse');
+    const evtSource = new EventSource(env.host + env.sse_port + '/sse')
 
     const elements = {
         moisture1Reading: document.getElementById('moisture1'),
