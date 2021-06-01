@@ -12,7 +12,7 @@ export default async function setupSSE() {
     }
 
     evtSource.onmessage = event => { onMessage(event, elements) }
-
+    
 }
 
 function onMessage(event, elements){
@@ -22,7 +22,7 @@ function onMessage(event, elements){
 
     if(message.percent) { elements.humidReading.innerText = message.percent + PERCENT }
 
-    if(message.sensorID === 'moisture1') { elements.moisture1Reading.innerText = message.moistureLevel }
+    if(message.sensorID === MOISTURE_1) { elements.moisture1Reading.innerText = message.moistureLevel }
 
-    if(message.sensorID === 'moisture2') { elements.moisture2Reading.innerText = message.moistureLevel }
+    if(message.sensorID === MOISTURE_2) { elements.moisture2Reading.innerText = message.moistureLevel }
 }
