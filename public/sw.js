@@ -9,10 +9,6 @@ self.addEventListener('install', e => {
 self.addEventListener('fetch', e => {
     e.respondWith(
         caches.match(e.request).then(response => {
-            if(e.request.url === "http://localhost:3030/sse") {
-                console.log(e)
-                return fetch(e.request)
-            }
             return response || fetch(e.request)
         })
     )
