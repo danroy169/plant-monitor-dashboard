@@ -2,6 +2,7 @@ import { DEGREES, HUMID, MOISTURE_1, MOISTURE_2, PERCENT, SSE, TEMP } from './co
 import { env } from './env.js'
 
 export default async function setupSSE() {
+    // check if online/offline
     const evtSource = new EventSource(env.host + env.sse_port + SSE)
 
     const elements = {
